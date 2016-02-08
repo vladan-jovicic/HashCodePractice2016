@@ -56,6 +56,29 @@ public class Main {
 				System.out.println(ops.elementAt(i).command);
 			}
 		System.out.println(cnt);
+		boolean [][] output = new boolean[n][m];
+		for(int i=0; i<sol.size();i++)
+		{
+			if(sol.elementAt(i) == 1)
+			{
+				Vector<coord> temp = S.elementAt(i);
+				for(int j=0; j<temp.size(); j++)
+				{
+					output[temp.elementAt(j).i][temp.elementAt(j).j] = true;
+				}
+			}
+		}
+//		for(int i=0; i<n;i++)
+//		{
+//			for(int j=0; j<m; j++)
+//			{
+//				if(output[i][j])
+//					System.out.print('#');
+//				else
+//					System.out.print('.');
+//			}
+//			System.out.println();
+//		}
 //		for(int i=0; i<sol.size(); i++)
 //		{
 //			System.out.println(sol.elementAt(i));

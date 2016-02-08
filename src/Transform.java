@@ -42,7 +42,7 @@ public class Transform {
 					//dodaj operaciju SQUARE i0, j0, sz
 //					Operations tmp = new Operations(i0, j0, sz);
 //					System.out.println(tmp.command);
-					ops.add(new Operations(i0, j0, sz));
+					ops.add(new Operations(i0, j0, sz-1));
 					// horizontal line
 					sz = 1;
 					expand = true;
@@ -87,8 +87,8 @@ public class Transform {
 				int i0 = operation.elementAt(i).i0;
 				int j0 = operation.elementAt(i).j0;
 				int sz = operation.elementAt(i).sz;
-				for(int y=i0-sz+1; y<i0+sz;y++)
-					for(int x=j0-sz+1; x<j0+sz;x++)
+				for(int y=i0-sz; y<=i0+sz;y++)
+					for(int x=j0-sz; x<=j0+sz;x++)
 						coords.add(new coord(y,x));
 			}
 			else if(operation.elementAt(i).type == 2)
